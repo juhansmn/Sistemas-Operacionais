@@ -1,0 +1,12 @@
+instruções:
+
+access: checa a permissão do usuário para com o arquivo
+brk: aloca memória de acordo com o tamanho do segmento
+close: fecha o binário
+execve: executa o binário gerado a partir do main.c
+fstat: recebe detalhes
+mmap: mapeia ou tira o mapeamento dos arquivos ou dispositivos na memória
+mprotect: define uma proteção para uma região da memória
+munmap: mapeia ou tira o mapeamento dos arquivos ou dispositivos na memória
+openat: abre e cria um arquivo, se possível
+write: escreve em um arquivo

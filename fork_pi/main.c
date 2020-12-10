@@ -11,7 +11,7 @@
 int gerarPontoAleatorio();
 
 //número total de pontos a serem simulados
-int pontos = 100000;
+int pontos = 1000000;
 int fileDescriptor[2];
 
 int main(void) {
@@ -54,18 +54,8 @@ void filhoInicial() {
   printf("Foram necessários %d/%d pontos simulados.\n", x, pontos);
 }
 
-void pai() {
-  int y;
-
-  close(fileDescriptor[1]);
-  read(fileDescriptor[0], &y, sizeof(int));
-  
-  close(fileDescriptor[0]);
-  estimarNumeroPI(y);
-}
-
 int gerarPontoAleatorio() {
-  //garantir aleatoarização
+  //garantindo seed
   srand(time(0));
 
   //número de pontos simulados
@@ -81,4 +71,14 @@ int gerarPontoAleatorio() {
   }
 
   return j;
+}
+
+void pai() {
+  int y;
+
+  close(fileDescriptor[1]);
+  read(fileDescriptor[0], &y, sizeof(int));
+  
+  close(fileDescriptor[0]);
+  estimarNumeroPI(y);
 }
